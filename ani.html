@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+</head>
+<body>
+<h1 id="test"></h1>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBnMvDTd0JOpHEGsEVI5aoKaSEXW4sGovI",
+    authDomain: "techfest-289ef.firebaseapp.com",
+    databaseURL: "https://techfest-289ef.firebaseio.com",
+    projectId: "techfest-289ef",
+    storageBucket: "techfest-289ef.appspot.com",
+    messagingSenderId: "350797693957"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script >
+	      var rootref=firebase.database().ref().child('events/cod/name');
+          var test=document.getElementById('test');
+          test.innerText="hello";
+          rootref.on('value',snap=>test.innerHTML=snap.val());
+</script>
+
+</body>
+</html>
